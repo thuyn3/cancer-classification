@@ -1,0 +1,4 @@
+**🧬 Cancer Classification Model Using Gene Expression Data**
+
+**📌 Overview**
+In this report, I will explore whether gene expression data can be used to help detect cancer by building a machine learning model. As a data scientist at a biotechnology startup, my goal is to build a simple proof of concept model that uses gene expression data collected from next-generation sequencing to predict whether cancer is present. The dataset contains expression levels for many genes along with a cancer label indicating whether cancer is present. I use this data to train and develop a classification model that estimates cancer risk from genetic patterns. My goal in this report is not to create a finished medical tool but to assess whether gene expression data contains enough signal to support early cancer detection and justify further development.
