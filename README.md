@@ -54,6 +54,7 @@ After that, to improve performance, I tuned some key hyperparameters using GridS
 During tuning, I measure performance using accuracy metrics since the main goal of building this model is to correctly classify whether cancer is present. The best-performing model was selected and refit on the training dataset.
 
 **📈 Results**
+
 Test Accuracy: 0.9850746268656716
 The dataset was split into training and test sets using a stratified split so the class distribution stayed the same giving a fair estimate of how well the model works on new data. After tuning the model using GridSearchCV with cross-validation, I evaluated the final selected model on the test dataset. The model achieved a test accuracy of approximately 0.985 meaning it correctly classifies cancer types for about 98.5% of the samples.
 
