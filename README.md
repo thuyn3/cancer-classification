@@ -1,6 +1,6 @@
 ## 🧬 Cancer Classification Model Using Gene Expression Data**
 
-## 📌 Overview**
+## 📌 Overview
 In this project, I will explore whether gene expression data can be used to help detect cancer by building a machine learning model. My goal is to build a simple proof of concept model that uses gene expression data collected from next-generation sequencing to predict whether cancer is present. The dataset contains expression levels for many genes along with a cancer label indicating whether cancer is present. I use this data to train and develop a classification model that estimates cancer risk from genetic patterns. My goal in this report is not to create a finished medical tool but to assess whether gene expression data contains enough signal to support early cancer detection and justify further development.
 
 **Methods**
@@ -70,7 +70,9 @@ The dataset was split into training and test sets using a stratified split so th
 
 Accuracy was an appropriate evaluation metric for this model because the goal of the model is to correctly classify whether a sample is associated with cancer. Because the outcome is a categorical label and the main goal is correct classification, accuracy is a clear and easy to understand measure of performance. It shows how often the model makes the right prediction on unseen data which fits well with measuring the model as a proof of concept cancer detection tool.
 
-![Confusion matrix](images/confusion-matrix.png)
+![Confusion matrix](images/confusion-matrix.PNG)
+
+The figure above is a confusion matrix shows how well the final model performs on unseen test data. Most predictions fall along the diagonal indicating that the model correctly classifies the majority of samples for each cancer type. Very few misclassifications appear and when they do, they are limited to a small number of cases. In general, this confusion matrix shows that the model has high test accuracy and performs well across different cancer classes.
 
 ## 📚 References
 * **Raw data:** CS 307 Genetics Lab — University of Illinois Urbana-Champaign.
