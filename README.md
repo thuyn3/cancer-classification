@@ -12,6 +12,7 @@ Methods
 - Evaluated the final model using test accuracy and a confusion matrix
 
 **🗂 Project Structure**
+```text
 ├── data/                                  # data source and information
 ├── README.md                              # this file
 ├── cancer-classification.ipynb            # analysis and machine learning workflow
