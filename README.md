@@ -52,9 +52,7 @@ The distribution of cancer types was examined to understand class balance before
 
 I also examined the distribution of the five cancer types before building the classification model. The dataset is imbalanced, with BRCA representing the largest class and COAD the smallest.
 
-![Distribution of cancer types table](images/cancer-type-summary.png)
-
-
+![Distribution of cancer types table](images/cancer-type-summary.PNG)
 
 ## 🔬 Modeling
 To develop a proof of concept cancer classification model, I used a Histogram Gradient Boosting Classifier which works well with gene expression data with a very large number of features and can model complex, non-linear relationships between genes and cancer outcomes. This model was chosen because it performs efficiently on large datasets and does not require feature scaling.
@@ -71,6 +69,8 @@ During tuning, I measure performance using accuracy metrics since the main goal 
 The dataset was split into training and test sets using a stratified split so the class distribution stayed the same giving a fair estimate of how well the model works on new data. After tuning the model using GridSearchCV with cross-validation, I evaluated the final selected model on the test dataset. The model achieved a test accuracy of approximately 0.985 meaning it correctly classifies cancer types for about 98.5% of the samples.
 
 Accuracy was an appropriate evaluation metric for this model because the goal of the model is to correctly classify whether a sample is associated with cancer. Because the outcome is a categorical label and the main goal is correct classification, accuracy is a clear and easy to understand measure of performance. It shows how often the model makes the right prediction on unseen data which fits well with measuring the model as a proof of concept cancer detection tool.
+
+![Confusion matrix](images/confusion-matrix.png)
 
 ## 📚 References
 * **Raw data:** CS 307 Genetics Lab — University of Illinois Urbana-Champaign.
