@@ -14,6 +14,7 @@ In this project, I will explore whether gene expression data can be used to help
 ## 🗂 Project Structure
 ```text
 ├── data/                                  # data source and information
+├── images/                                # screenshot of figures
 ├── README.md                              # this file
 ├── cancer-classification.ipynb            # analysis and machine learning workflow
 ├── index.html                             # rendered notebook (open in browser)
