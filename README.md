@@ -50,6 +50,12 @@ The distribution of cancer types was examined to understand class balance before
 
 ![Distribution of cancer types](images/cancer-type-distribution.PNG)
 
+I also examined the distribution of the five cancer types before building the classification model. The dataset is imbalanced, with BRCA representing the largest class and COAD the smallest.
+
+![Distribution of cancer types table](images/cancer-type-summary.png)
+
+
+
 ## 🔬 Modeling
 To develop a proof of concept cancer classification model, I used a Histogram Gradient Boosting Classifier which works well with gene expression data with a very large number of features and can model complex, non-linear relationships between genes and cancer outcomes. This model was chosen because it performs efficiently on large datasets and does not require feature scaling.
 
