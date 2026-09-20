@@ -17,6 +17,7 @@ Methods
 ├── README.md                              # this file
 ├── cancer-classification.ipynb            # analysis and machine learning workflow
 ├── index.html                             # rendered notebook (open in browser)
+```
 
 ## 📊 Dataset**
 In this project, I use a gene expression dataset collected from next-generation sequencing experiments. Each observation represents a single biological sample and the features correspond to measured gene expression levels such as “gene_####”. The target variable “cancer” indicates whether the sample is associated with cancer. This dataset allows me to study how patterns in gene expression differ between cancer and non-cancer samples. To support unbiased model evaluation, I split the data into training and test sets while making sure the class proportions stay the same in both.
@@ -38,12 +39,34 @@ The dataset is provided through the CS 307 course lab and is not included in thi
 Dataset source:
 https://lab.cs307.org/genetics/data/genetics.parquet
 
-
-
 **🛠️ Tools**
 - Python
 - pandas
 - scikit-learn
+
+**🔬 Modeling**
+To develop a proof of concept cancer classification model, I used a Histogram Gradient Boosting Classifier which works well with gene expression data with a very large number of features and can model complex, non-linear relationships between genes and cancer outcomes. This model was chosen because it performs efficiently on large datasets and does not require feature scaling.
+
+Before modeling, missing gene expression values were handled using median imputation strategy which is a simple and reliable way to handle missing data without being affected by extreme values. I then combined the imputer and the classifier into one scikit-learn pipeline so that the same preprocessing steps were applied consistently during both training and testing.
+
+After that, to improve performance, I tuned some key hyperparameters using GridSearchCV with 5-fold cross-validation. Specifically, I tuned the learning rate, the maximum depth of the trees and the number of boosting iterations. These paramters control how fast the model learns, how complex each tree is and how large the overall model becomes.
+
+During tuning, I measure performance using accuracy metrics since the main goal of building this model is to correctly classify whether cancer is present. The best-performing model was selected and refit on the training dataset.
+
+**📈 Results**
+Test Accuracy: 0.9850746268656716
+The dataset was split into training and test sets using a stratified split so the class distribution stayed the same giving a fair estimate of how well the model works on new data. After tuning the model using GridSearchCV with cross-validation, I evaluated the final selected model on the test dataset. The model achieved a test accuracy of approximately 0.985 meaning it correctly classifies cancer types for about 98.5% of the samples.
+
+Accuracy was an appropriate evaluation metric for this model because the goal of the model is to correctly classify whether a sample is associated with cancer. Because the outcome is a categorical label and the main goal is correct classification, accuracy is a clear and easy to understand measure of performance. It shows how often the model makes the right prediction on unseen data which fits well with measuring the model as a proof of concept cancer detection tool.
+
+## 📚 References
+* **Raw data:** CS 307 Genetics Lab — University of Illinois Urbana-Champaign.
+  https://lab.cs307.org/genetics/data/genetics.parquet
+* **Machine learning:** scikit-learn documentation for `HistGradientBoostingClassifier`, `SimpleImputer`, and `GridSearchCV`.
+* **Original data source:** The Cancer Genome Atlas (TCGA) Pan-Cancer Analysis Project; modified for the CS 307 Genetics Lab.
+
+
+
 
 
 
