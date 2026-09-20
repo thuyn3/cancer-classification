@@ -48,7 +48,7 @@ https://lab.cs307.org/genetics/data/genetics.parquet
 
 The distribution of cancer types was examined to understand class balance before building the classification model.
 
-![Distribution of cancer types](images/cancer-type-distribution.png)
+![Distribution of cancer types](images/cancer-type-distribution.PNG)
 
 ## 🔬 Modeling
 To develop a proof of concept cancer classification model, I used a Histogram Gradient Boosting Classifier which works well with gene expression data with a very large number of features and can model complex, non-linear relationships between genes and cancer outcomes. This model was chosen because it performs efficiently on large datasets and does not require feature scaling.
